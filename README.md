@@ -46,6 +46,19 @@ The system supports three roles—**User**, **Admin**, and **Superadmin**—each
 
 ---
 
+## Events (a feature)
+
+Events refer to special or non-routine occurrences that may require attendance tracking but are not part of the regular daily schedule. These events are typically infrequent, occurring occasionally rather than on a daily basis.
+
+### Examples of Events:
+- **Trainings**: Skill-building sessions or courses.
+- **Workshops**: Hands-on learning experiences.
+- **Company Meetings**: Team or organizational gatherings.
+- **Seminars**: Educational talks or discussions.
+
+These events are important for tracking non-typical attendance.
+
+---
 ##  Setup
 
 ### Prerequisites
