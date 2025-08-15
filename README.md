@@ -1,12 +1,15 @@
 # Attendance System
 
-A role-based attendance tracking platform that verifies presence using **QR code scanning** or **vehicle plate number recognition**.  
+An attendance tracking platform that verifies presence using **QR code scanning** or **vehicle plate number recognition**.  
 The scanning process is handled by **Python**, which sends the data to a **Node.js + Express** backend for validation against **MongoDB**.  
 The system supports three roles—**User**, **Admin**, and **Superadmin**—each with tailored permissions.
 
 ---
 
 ##  Features
+<p align="center">
+  <img src="https://github.com/Endlessodds/attendance-system/blob/main/Images/Diagram.jpg" alt="Diagram" width="650"/>
+</p>
 
 ### User
 - Authentication (login/register)
