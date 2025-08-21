@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <h1>QR Code Scanner using Browser Camera</h1>
+    <video id="video" width="400" autoplay></video>
+    <canvas id="canvas" hidden></canvas>
+    <h2>Scanned QR Codes:</h2>
+    <ul id="results-list"></ul>
+
+<script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const resultsList = document.getElementById('results-list');
+
+    let lastScanned = null;
+
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        video.srcObject = stream;
+    });
+
+    setInterval(() => {
+        const context = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataURL = canvas.toDataURL('image/jpeg');
+
+        fetch('/scan', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image: dataURL })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.data !== lastScanned) {
+                lastScanned = data.data;
+
+                // Create new list item
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = data.data;
+                a.textContent = data.data;
+                a.target = '_blank';
+                li.appendChild(a);
+
+                // Add new item to the top of the list
+                resultsList.insertBefore(li, resultsList.firstChild);
+            }
+        });
+    }, 1000);
+</script>
+
+</body>
+</html>
