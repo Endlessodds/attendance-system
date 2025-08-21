@@ -1,4 +1,6 @@
-USER OPENS PAGE
+Version 01
+
+opens default page scanner/templates/index.html PAGE (test)
      ⬇️
 Browser loads video feed from webcam
      ⬇️
@@ -10,4 +12,4 @@ Backend decodes and scans for QR code
      ⬇️
 If found, data is returned
      ⬇️
-Browser displays the result as a clickable link
+Browser displays the scanned and decoded 
