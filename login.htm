@@ -11,6 +11,7 @@
   h1{
     text-align: left;
     margin-right: 10%;
+    color: white;
   }
 </style>
 <h1><b> Attendance <br> Management <br> system</b> </h1>
@@ -43,5 +44,12 @@
             <button type="submit" class="btn">Login</button>
         </form>
     </div>
+    <script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent actual form submission
+    alert('Login successful!');
+    window.location.href = 'register.htm';
+});
+</script>
 </body>
 </html>
