@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title> REGISTRATION FORM </title>
+    <link rel="stylesheet" href="ndd.css">
+</head>
+
+<body>
+    <div class="Registration">
+        <h2> REGISTER HERE..</h2>
+        <div class="container">
+            <form>
+                <img class="avatar" src="user.jpg" alt="avatar image">
+                <img class="avatar" src="user2.jpg" alt="avatar image">
+                <br>
+                <br>
+                <label style="text-align: left;">Full Name:</label><br>
+                <input type="text" name="user name" placeholder="Name.." required>
+                <br>
+                <label>Email:</label> <br>
+                <input type="text" name="email address" placeholder="Email Address.." required>
+                <br>
+                <label>Date of Birth:</label><br>
+                <input type="date" name="DOB" required><br>
+                <br>
+
+               
+                <label>Phone Number:</label><br>
+                <input type="tel" name="Phone Number" placeholder="Enter Phone Number..">
+                <br>
+                <label>emergency contact:</label><br>
+                <input type="tel" name="emergency contact" placeholder="Enter Emergency Contact Number..">
+                <br>
+                <label>Username:</label> <br>
+                <input type="text" name="username" placeholder="Username.." required>
+                <br>
+                <label>Password: </label> <br>
+                <input type="password" name="user password" placeholder="Password" required>
+                <br>
+                <label>Confirm Password: </label> <br>
+         <input type="password" name="confirm user password" placeholder="Confirm Password" required>
+                <br>
+<label>Gender:</label><br>
+<select name="gender" required>
+    <option value="" disabled selected>Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select>
+<br>
+
+<label>Address:</label><br>
+<input type="text" name="address" placeholder="Enter your address" required>
+<br>
+<label>Car Status:</label><br>
+<select name="car_status" id="car_status" required>
+    <option value="" disabled selected>Select Car Status</option>
+    <option value="have">Have</option>
+    <option value="donot_have">Do Not Have</option>
+</select>
+<br>
+<div id="plate_section" style="display:none;">
+    <label>Car Plate Number:</label><br>
+    <input type="text" name="plate_number" placeholder="Enter Plate Number">
+    <br>
+</div>
+
+<div class="upload-row">
+    <div class="upload-col">
+        <label for="user_photo" class="upload-btn">Upload Your Photo(click on this text to upload)</label>
+        <input type="file" id="user_photo" name="user_photo" accept="image/*" required style="display:none;">
+        <span id="file-chosen" style="color:#fff;">No file chosen</span>
+    </div>
+    <br>
+    <div class="upload-col">
+        <label for="cv_file" class="upload-btn">Upload Your CV(click on this text to upload)</label>
+        <input type="file" id="cv_file" name="cv_file" accept=".pdf,.doc,.docx" required style="display:none;">
+        <span id="cv-chosen" style="color:#fff;">No file chosen</span>
+    </div>
+</div>
+<br>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Car plate toggle
+    document.getElementById('car_status').addEventListener('change', function() {
+        var plateSection = document.getElementById('plate_section');
+        plateSection.style.display = this.value === 'have' ? 'block' : 'none';
+    });
+
+    // Make the label open the photo file dialog
+    document.querySelector('.upload-btn').addEventListener('click', function() {
+        document.getElementById('user_photo').click();
+    });
+
+    // Show the chosen photo file name
+    document.getElementById('user_photo').addEventListener('change', function(){
+        document.getElementById('file-chosen').textContent = this.files[0] ? this.files[0].name : 'No file chosen';
+    });
+
+    // Make the label open the CV file dialog
+    document.getElementById('cv_file').previousElementSibling.addEventListener('click', function() {
+        document.getElementById('cv_file').click();
+    });
+
+    // Show the chosen CV file name
+    document.getElementById('cv_file').addEventListener('change', function(){
+        document.getElementById('cv-chosen').textContent = this.files[0] ? this.files[0].name : 'No file chosen';
+    });
+});
+</script>
+
+             <br>   <input type="checkbox" required> I agree to Terms & Conditions<br>
+                <input type="Submit" value="REGISTER">
+        </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: url('Bgimg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+}
+
+.Registration {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 40px 30px;
+    width: 400px;
+}
+
+.Registration h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 10px 20px 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    object-fit: cover;
+    border: 2px solid #fff;
+    background: #eee;
+}
+
+label {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+select:focus {
+    box-shadow: 0 0 0 2px #2575fc;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #2575fc;
+}
+
+input[type="Submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+}
+
+input[type="Submit"]:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'><path fill='gray' d='M4 6l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+}
+
+::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .Registration {
+        width: 95vw;
+        padding: 20px 5vw;
+    }
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .custom-file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+}
+.custom-file-label:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+.upload-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+}
+.upload-btn:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+.upload-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.upload-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.upload-btn {
+    width: 100%;
+}
+@media (max-width: 600px) {
+    .upload-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+}
