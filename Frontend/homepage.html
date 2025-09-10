@@ -1,0 +1,1875 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    -- Navigation Bar --
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-user-check"></i>
+                <span>Digital Attendance System</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="search here...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="icon-container">
+                    <div class="icon-button">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                
+                <div class="icon-container" style="position: relative;">
+                    <div class="icon-button" id="notificationIcon">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <span class="notification-actions">
+                                <i class="fas fa-cog"></i>
+                            </span>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-title">New Response to Your Complaint</div>
+                                <div class="notification-content">We've addressed your issue with the attendance system.</div>
+                                <div class="notification-time">Today, 11:30 AM</div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-title">Complaint Status Updated</div>
+                                <div class="notification-content">Your technical issue is now being investigated.</div>
+                                <div class="notification-time">Yesterday, 4:15 PM</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">System Maintenance</div>
+                                <div class="notification-content">Scheduled maintenance this weekend may affect service.</div>
+                                <div class="notification-time">Oct 10, 2023</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">New Feature Available</div>
+                                <div class="notification-content">Try our new quick reporting feature for faster support.</div>
+                                <div class="notification-time">Oct 5, 2023</div>
+                            </div>
+                        </div>
+                        <div class="notification-footer">
+                            <a href="#" class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="icon-container">
+                    <div class="icon-button">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    !-- Hero Section --
+    <section class="hero">
+        <h1>Digital Attendance System</h1>
+        <p>Efficiently manage event attendance with our QR code-based tracking system. Simple, fast, and reliable.</p>
+    </section>
+
+    -- QR Code Sections --
+    <div class="qr-sections">
+        <div class="qr-card">
+            <h2>QR Code</h2>
+            <p>scan this qr code to mark your attendance for the event</p>
+            <div class="qr-placeholder">QR CODE IMAGE</div>
+            <button class="scan-button">SCAN ME</button>
+        </div>
+        
+        <div class="qr-card">
+            <h2>Event QR Code</h2>
+            <p>to attend the event scan this code with your device camera</p>
+            <div class="qr-placeholder">EVENT QR CODE</div>
+            <button class="scan-button">SCAN ME</button>
+        </div>
+    </div>
+
+    !-- Complaint Section --
+    <div class="complaint-section" id="complaintSection">
+        <div class="page-title">
+            <h1>Submit a Complaint</h1>
+            <p>Let us know about any issues you're experiencing</p>
+        </div>
+        
+        <div class="complaint-form">
+            <form id="complaintForm">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="What is your complaint about?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select a category</option>
+                        <option value="technical">Technical Issue</option>
+                        <option value="attendance">Attendance Problem</option>
+                        <option value="event">Event Related</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="complaint">Complaint Details</label>
+                    <textarea id="complaint" placeholder="Please describe your complaint in detail..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Complaint</button>
+            </form>
+        </div>
+        
+        <div class="recent-complaints">
+            <h2>Recently Submitted Complaints</h2>
+            
+            <div class="complaint-item">
+                <span class="complaint-bullet">●</span>
+                <div class="complaint-text">System not marking attendance properly</div>
+                <div class="complaint-date">Today, 10:23 AM</div>
+            </div>
+            
+            <div class="complaint-item">
+                <span class="complaint-bullet">●</span>
+                <div class="complaint-text">QR code not scanning correctly</div>
+                <div class="complaint-date">Yesterday, 3:45 PM</div>
+            </div>
+            
+            <div class="complaint-item">
+                <span class="complaint-bullet">●</span>
+                <div class="complaint-text">Request for additional features in reporting</div>
+                <div class="complaint-date">Oct 12, 2023</div>
+            </div>
+        </div>
+    </div>
+
+    -- Footer --
+    <footer>
+        <p> 2025 Digital Attendance System.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchButton = document.querySelector('.search-container button');
+            const searchInput = document.querySelector('.search-container input');
+            
+            searchButton.addEventListener('click', function() {
+                if (searchInput.value.trim() !== '') {
+                    alert('Searching for: ' + searchInput.value);
+                    searchInput.value = '';
+                } else {
+                    alert('Please enter something to search');
+                }
+            });
+            
+            // Allow pressing Enter to search
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchButton.click();
+                }
+            });
+            
+            // Add click effect to scan buttons
+            const scanButtons = document.querySelectorAll('.scan-button');
+            scanButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('QR Code scanning functionality would open here');
+                });
+            });
+            
+            // Menu icon functionality
+            const menuIcon = document.querySelector('.fa-bars');
+            menuIcon.addEventListener('click', function() {
+                alert('Menu would open here');
+            });
+            
+            // Notification functionality
+            const notificationIcon = document.getElementById('notificationIcon');
+            const notificationDropdown = document.getElementById('notificationDropdown');
+            const complaintSection = document.getElementById('complaintSection');
+            const complaintForm = document.getElementById('complaintForm');
+            
+            // Toggle notification dropdown when notification icon is clicked
+            notificationIcon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                notificationDropdown.classList.toggle('active');
+                
+                // Remove notification badge when clicked
+                const badge = document.querySelector('.notification-badge');
+                if (badge && notificationDropdown.classList.contains('active')) {
+                    badge.style.display = 'none';
+                }
+                
+                // Show complaint section if it's not already visible
+                if (!complaintSection.classList.contains('active')) {
+                    complaintSection.classList.add('active');
+                }
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (notificationDropdown.classList.contains('active') && 
+                    !notificationDropdown.contains(e.target) && 
+                    !notificationIcon.contains(e.target)) {
+                    notificationDropdown.classList.remove('active');
+                }
+            });
+            
+            // Handle form submission
+            complaintForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const subject = document.getElementById('subject').value;
+                const category = document.getElementById('category').value;
+                const complaint = document.getElementById('complaint').value;
+                
+                // Simple validation
+                if (!subject || !category || !complaint) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                // In a real application, you would send this data to a server
+                console.log('Complaint submitted:', { subject, category, complaint });
+                
+                // Show success message
+                alert('Complaint submitted successfully! Our team will review it shortly.');
+                
+                // Reset form
+                complaintForm.reset();
+            });
+            
+            // Mark notifications as read when clicked
+            const notificationItems = document.querySelectorAll('.notification-item');
+            notificationItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.remove('unread');
+                });
+            });
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color:#fcf7f7 ;
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .icon-button {
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .icon-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .icon-button i {
+            font-size: 1.2rem;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            margin-left: 2rem;
+        }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            width: 200px;
+            outline: none;
+        }
+
+        .search-container input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-container button {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Profile Dropdown */
+        .profile-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+        }
+
+        .profile-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .profile-dropdown .dropdown-header {
+            padding: 15px;
+            background: #4a6fc9;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-dropdown .dropdown-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid white;
+        }
+
+        .profile-dropdown .dropdown-item {
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.3s;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .profile-dropdown .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .profile-dropdown .dropdown-item i {
+            margin-right: 10px;
+            color: #4a6fc9;
+        }
+
+        .profile-dropdown .dropdown-item:hover {
+            background: #f5f7fa;
+        }
+        
+        /* Notification Dropdown */
+        .notification-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+        }
+
+        .notification-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .notification-header {
+            padding: 15px;
+            background: #4a6fc9;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .notification-actions {
+            cursor: pointer;
+        }
+
+        .notification-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .notification-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f1f1f1;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .notification-item:hover {
+            background: #f9f9f9;
+        }
+
+        .notification-item.unread {
+            background: #f0f7ff;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+
+        .notification-content {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .notification-time {
+            color: #718096;
+            font-size: 0.8rem;
+        }
+
+        .notification-footer {
+            padding: 10px 15px;
+            text-align: center;
+            border-top: 1px solid #f1f1f1;
+        }
+
+        .view-all {
+            color: #4a6fc9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .app-header {
+            background: #4a6fc9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 100;
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 70px;
+            left: -250px;
+            width: 250px;
+            background: #3a5fbd;
+            height: calc(100% - 70px);
+            transition: left 0.3s ease;
+            z-index: 99;
+            border-top: 1px solid #2c4da1;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mobile-menu.active {
+            left: 0;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+        
+        .mobile-menu li {
+            padding: 15px 20px;
+            color: white;
+            border-bottom: 1px solid #4a6fc9;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .mobile-menu li:hover {
+            background: #2c4da1;
+        }
+        
+        .mobile-menu li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .tab-container {
+            display: flex;
+            background: #3a5fbd;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .tab.active {
+            background: #2c4da1;
+            font-weight: bold;
+        }
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .form {
+            display: none;
+        }
+        
+        .form.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            color: #2c4da1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #4a6fc9;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .upload-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .upload-col {
+            flex: 1;
+        }
+        
+        .upload-btn {
+            display: block;
+            padding: 12px;
+            background: #4a6fc9;
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .upload-btn:hover {
+            background: #3a5fbd;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #4a6fc9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #3a5fbd;
+        }
+        
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .terms input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4a6fc9;
+        }
+        
+        .profile-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            width: 150px;
+            color: #555;
+        }
+        
+        .info-value {
+            flex: 1;
+            color: #333;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #file-chosen, #cv-chosen {
+            margin-left: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* QR Code Sections */
+        .qr-sections {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .qr-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        .qr-card h2 {
+            color: #2c4da1;
+            margin-bottom: 1rem;
+        }
+        
+        .qr-card p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+        
+        .qr-placeholder {
+            background: #f7f7f7;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #718096;
+        }
+        
+        .scan-button {
+            background: #4a6fc9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .scan-button:hover {
+            background: #3a5fbd;
+        }
+        
+        /* Complaint Section */
+        .complaint-section {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+            margin: 2rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-title p {
+            color: #4a5568;
+            font-size: 1.2rem;
+        }
+        
+        .complaint-form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .submit-button {
+            background: #4a6fc9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #3a5fbd;
+        }
+        
+        .recent-complaints {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .recent-complaints h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .complaint-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .complaint-item:last-child {
+            border-bottom: none;
+        }
+        
+        .complaint-bullet {
+            color: #2575fc;
+            margin-right: 12px;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        
+        .complaint-text {
+            flex: 1;
+            color: #2d3748;
+        }
+        
+        .complaint-date {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        /* Notifications Styles */
+        .notifications-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .notifications-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .notifications-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .section-description {
+            color: #4a5568;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        
+        .notification-item-list {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .notification-item-list:last-child {
+            border-bottom: none;
+        }
+        
+        .notification-bullet {
+            width: 10px;
+            height: 10px;
+            background: #2575fc;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .notification-text {
+            flex: 1;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 1.5rem 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tab-container {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 1rem;
+            }
+            
+            .search-container {
+                margin-top: 1rem;
+                margin-left: 0;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .notifications-content, .complaint-form, .recent-complaints {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .profile-dropdown, .notification-dropdown {
+                right: -50px;
+            }
+            
+            .notification-dropdown {
+                width: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none;
+            }
+            
+            .menu-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-user-check"></i>
+                <span>Digital Attendance System</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" data-tab="home">Home</a></li>
+                <li><a href="#" data-tab="register">Registration</a></li>
+                <li><a href="#" data-tab="profile">Profile</a></li>
+                <li><a href="#" data-tab="notifications">Notifications</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="search here...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="icon-container" style="position: relative;">
+                    <div class="icon-button" id="notificationIcon">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <span class="notification-actions">
+                                <i class="fas fa-cog"></i>
+                            </span>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-title">New Response to Your Complaint</div>
+                                <div class="notification-content">We've addressed your issue with the attendance system.</div>
+                                <div class="notification-time">Today, 11:30 AM</div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-title">Complaint Status Updated</div>
+                                <div class="notification-content">Your technical issue is now being investigated.</div>
+                                <div class="notification-time">Yesterday, 4:15 PM</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">System Maintenance</div>
+                                <div class="notification-content">Scheduled maintenance this weekend may affect service.</div>
+                                <div class="notification-time">Oct 10, 2023</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">New Feature Available</div>
+                                <div class="notification-content">Try our new quick reporting feature for faster support.</div>
+                                <div class="notification-time">Oct 5, 2023</div>
+                            </div>
+                        </div>
+                        <div class="notification-footer">
+                            <a href="#" class="view-all">View All Notifications</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="icon-container" style="position: relative;">
+                    <div class="icon-button" id="profile-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <!-- Profile Dropdown Menu -->
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="dropdown-header">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCAyMXYtMmE0IDQgMCAwIDAtNC00SDhhNCA0IDQgMCAwIDAtNCA0djIiPjwvcGF0aD48Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiPjwvY2lyY2xlPjwvc3ZnPg==" alt="Profile">
+                            <div>John Doe</div>
+                        </div>
+                        <a href="#" class="dropdown-item" data-tab="profile">
+                            <i class="fas fa-user-circle"></i> View Profile
+                        </a>
+                        <a href="#" class="dropdown-item" data-tab="notifications">
+                            <i class="fas fa-bell"></i> Notifications
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-question-circle"></i> Help
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="app-header">
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <h1>Digital Attendance System</h1>
+            
+            <div class="mobile-menu">
+                <ul>
+                    <li data-tab="home"><i class="fas fa-home"></i> Home</li>
+                    <li data-tab="register"><i class="fas fa-user-plus"></i> Registration</li>
+                    <li data-tab="profile"><i class="fas fa-user-circle"></i> Profile</li>
+                    <li data-tab="notifications"><i class="fas fa-bell"></i> Notifications</li>
+                    <li><i class="fas fa-chart-bar"></i> Reports</li>
+                    <li><i class="fas fa-cog"></i> Settings</li>
+                    <li><i class="fas fa-question-circle"></i> Help</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tab active" data-tab="home">Home</div>
+            <div class="tab" data-tab="register">Registration</div>
+            <div class="tab" data-tab="profile">Profile</div>
+            <div class="tab" data-tab="notifications">Notifications</div>
+        </div>
+        
+        <div class="form-container">
+            <!-- Home Content -->
+            <div id="homeForm" class="form active">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <h1>Digital Attendance System</h1>
+                    <p>Efficiently manage event attendance with our QR code-based tracking system. Simple, fast, and reliable.</p>
+                </section>
+
+                <!-- QR Code Sections -->
+                <div class="qr-sections">
+                    <div class="qr-card">
+                        <h2>QR Code</h2>
+                        <p>scan this qr code to mark your attendance for the event</p>
+                        <div class="qr-placeholder">QR CODE IMAGE</div>
+                        <button class="scan-button">SCAN ME</button>
+                    </div>
+                    
+                    <div class="qr-card">
+                        <h2>Event QR Code</h2>
+                        <p>to attend the event scan this code with your device camera</p>
+                        <div class="qr-placeholder">EVENT QR CODE</div>
+                        <button class="scan-button">SCAN ME</button>
+                    </div>
+                </div>
+
+                <!-- Complaint Section -->
+                <div class="complaint-section" id="complaintSection">
+                    <div class="page-title">
+                        <h1>Submit a Complaint</h1>
+                        <p>Let us know about any issues you're experiencing</p>
+                    </div>
+                    
+                    <div class="complaint-form">
+                        <form id="complaintForm">
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="What is your complaint about?" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select id="category" required>
+                                    <option value="">Select a category</option>
+                                    <option value="technical">Technical Issue</option>
+                                    <option value="attendance">Attendance Problem</option>
+                                    <option value="event">Event Related</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="complaint">Complaint Details</label>
+                                <textarea id="complaint" placeholder="Please describe your complaint in detail..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">Submit Complaint</button>
+                        </form>
+                    </div>
+                    
+                    <div class="recent-complaints">
+                        <h2>Recently Submitted Complaints</h2>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">System not marking attendance properly</div>
+                            <div class="complaint-date">Today, 10:23 AM</div>
+                        </div>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">QR code not scanning correctly</div>
+                            <div class="complaint-date">Yesterday, 3:45 PM</div>
+                        </div>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">Request for additional features in reporting</div>
+                            <div class="complaint-date">Oct 12, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Registration Form -->
+            <form id="registerForm" class="form">
+                <h2>REGISTER HERE</h2>
+                
+                <div class="avatar-container">
+                    <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCAyMXYtMmE0IDQgMCAwIDAtNC00SDhhNCA0IDAgMCAwLTQgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4=" alt="avatar image">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your full name.." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email address.." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number..">
+                </div>
+                
+                <div class="form-group">
+                    <label for="emergency_contact">Emergency Contact:</label>
+                    <input type="tel" id="emergency_contact" name="emergency_contact" placeholder="Enter emergency contact..">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="car_status">Car Status:</label>
+                    <select id="car_status" name="car_status" required>
+                        <option value="" disabled selected>Select Car Status</option>
+                        <option value="Have">Have</option>
+                        <option value="Do Not Have">Do Not Have</option>
+                    </select>
+                </div>
+                
+                <div id="plate_section" class="form-group hidden">
+                    <label for="plate_number">Car Plate Number:</label>
+                    <input type="text" id="plate_number" name="plate_number" placeholder="Enter plate number">
+                </div>
+                
+                <div class="upload-row">
+                    <div class="upload-col">
+                        <label for="user_photo" class="upload-btn">Upload Your Photo</label>
+                        <input type="file" id="user_photo" name="user_photo" accept="image/*" style="display:none;">
+                        <span id="file-chosen">No file chosen</span>
+                    </div>
+                    
+                    <div class="upload-col">
+                        <label for="cv_file" class="upload-btn">Upload Your CV</label>
+                        <input type="file" id="cv_file" name="cv_file" accept=".pdf,.doc,.docx" style="display:none;">
+                        <span id="cv-chosen">No file chosen</span>
+                    </div>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to Terms & Conditions</label>
+                </div>
+                
+                <button type="submit">REGISTER</button>
+            </form>
+            
+            <!-- Profile Form -->
+            <form id="profileForm" class="form">
+                <h2>PROFILE INFORMATION</h2>
+                
+                <div class="avatar-container">
+                    <img class="avatar" id="profile_avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCAyMXYtMmE0IDQgMCAwIDAtNC00SDhhNCA0IDAgMCAwLTQgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4=" alt="profile avatar">
+                </div>
+                
+                <div class="profile-info">
+                    <div class="info-row">
+                        <div class="info-label">Full Name:</div>
+                        <div class="info-value" id="profile_fullname">Not provided</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Phone Number:</div>
+                        <div class="info-value" id="profile_phone">Not provided</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Email:</div>
+                        <div class="info-value" id="profile_email">Not provided</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Gender:</div>
+                        <div class="info-value" id="profile_gender">Not provided</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Car Status:</div>
+                        <div class="info-value" id="profile_car_status">Not provided</div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Plate Number:</div>
+                        <div class="info-value" id="profile_plate">Not provided</div>
+                    </div>
+                </div>
+                
+                <h2>CHANGE PASSWORD</h2>
+                
+                <div class="form-group">
+                    <label for="old_password">Old Password:</label>
+                    <input type="password" id="old_password" name="old_password" placeholder="Enter old password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="new_password">New Password:</label>
+                    <input type="password" id="new_password" name="new_password" placeholder="Enter new password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_password">Confirm New Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password">
+                </div>
+                
+                <button type="submit">Save Changes</button>
+            </form>
+            
+            <!-- Notifications Content -->
+            <div id="notificationsForm" class="form">
+                <div class="page-title">
+                    <h1>Notifications</h1>
+                    <p>Stay updated with your latest notifications and complaints</p>
+                </div>
+
+                <div class="notifications-content">
+                    <div class="notifications-section">
+                        <h2 class="section-title">Notifications</h2>
+                        <p class="section-description">all the notifications appear here</p>
+                        
+                        <div class="notification-item-list">
+                            <div class="notification-bullet"></div>
+                            <div class="notification-text">Your attendance for "Web Development Workshop" has been recorded</div>
+                        </div>
+                        
+                        <div class="notification-item-list">
+                            <div class="notification-bullet"></div>
+                            <div class="notification-text">New event "UI/UX Design Conference" has been added</div>
+                        </div>
+                        
+                        <div class="notification-item-list">
+                            <div class="notification-bullet"></div>
+                            <div class="notification-text">Your report for October is ready for download</div>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="notifications-section">
+                        <h2 class="section-title">Submit complaint</h2>
+                        <p class="section-description">View recently submitted complaints</p>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">QR code not scanning properly during yesterday's event</div>
+                        </div>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">Attendance marked incorrectly for the morning session</div>
+                        </div>
+                        
+                        <div class="complaint-item">
+                            <span class="complaint-bullet">●</span>
+                            <div class="complaint-text">Request for additional features in the reporting section</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Digital Attendance System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu functionality
+            const menuIcon = document.querySelector('.menu-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            menuIcon.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Profile dropdown functionality
+            const profileIcon = document.getElementById('profile-icon');
+            const profileDropdown = document.getElementById('profile-dropdown');
+            
+            profileIcon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                profileDropdown.classList.toggle('active');
+                
+                // Close notification dropdown if open
+                notificationDropdown.classList.remove('active');
+            });
+            
+            // Notification dropdown functionality
+            const notificationIcon = document.getElementById('notificationIcon');
+            const notificationDropdown = document.getElementById('notificationDropdown');
+            
+            notificationIcon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                notificationDropdown.classList.toggle('active');
+                
+                // Remove notification badge when clicked
+                const badge = document.querySelector('.notification-badge');
+                if (badge && notificationDropdown.classList.contains('active')) {
+                    badge.style.display = 'none';
+                }
+                
+                // Close profile dropdown if open
+                profileDropdown.classList.remove('active');
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.profile-dropdown') && !e.target.closest('#profile-icon')) {
+                    profileDropdown.classList.remove('active');
+                }
+                
+                if (!e.target.closest('.notification-dropdown') && !e.target.closest('#notificationIcon')) {
+                    notificationDropdown.classList.remove('active');
+                }
+            });
+            
+            // Mobile menu items functionality
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            
+            const switchTab = function(tabName) {
+                // Switch tabs if data-tab attribute exists
+                const tabs = document.querySelectorAll('.tab');
+                const forms = document.querySelectorAll('.form');
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                document.querySelector(`.tab[data-tab="${tabName}"]`).classList.add('active');
+                
+                // Show corresponding form
+                forms.forEach(form => {
+                    form.classList.remove('active');
+                    if (form.id === tabName + 'Form') {
+                        form.classList.add('active');
+                    }
+                });
+                
+                // Close dropdowns if open
+                profileDropdown.classList.remove('active');
+                notificationDropdown.classList.remove('active');
+                
+                // Close mobile menu
+                mobileMenu.classList.remove('active');
+            };
+            
+            mobileMenuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    if (tabName) {
+                        switchTab(tabName);
+                    }
+                });
+            });
+            
+            // Nav links functionality
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabName = this.getAttribute('data-tab');
+                    if (tabName) {
+                        switchTab(tabName);
+                    }
+                });
+            });
+            
+            // Dropdown items functionality
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabName = this.getAttribute('data-tab');
+                    if (tabName) {
+                        switchTab(tabName);
+                    }
+                });
+            });
+            
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.tab');
+            const forms = document.querySelectorAll('.form');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding form
+                    forms.forEach(form => {
+                        form.classList.remove('active');
+                        if (form.id === tabName + 'Form') {
+                            form.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Show/hide plate number based on car status
+            const carStatus = document.getElementById('car_status');
+            const plateSection = document.getElementById('plate_section');
+            
+            if (carStatus && plateSection) {
+                carStatus.addEventListener('change', function() {
+                    if (this.value === 'Have') {
+                        plateSection.classList.remove('hidden');
+                    } else {
+                        plateSection.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // File upload handlers
+            const userPhoto = document.getElementById('user_photo');
+            const fileChosen = document.getElementById('file-chosen');
+            
+            if (userPhoto && fileChosen) {
+                userPhoto.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        fileChosen.textContent = this.files[0].name;
+                        
+                        // Preview image
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.querySelector('.avatar').src = e.target.result;
+                        }
+                        reader.readAsDataURL(this.files[0]);
+                    } else {
+                        fileChosen.textContent = 'No file chosen';
+                    }
+                });
+            }
+            
+            const cvFile = document.getElementById('cv_file');
+            const cvChosen = document.getElementById('cv-chosen');
+            
+            if (cvFile && cvChosen) {
+                cvFile.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        cvChosen.textContent = this.files[0].name;
+                    } else {
+                        cvChosen.textContent = 'No file chosen';
+                    }
+                });
+            }
+            
+            // Form submission handlers
+            const registerForm = document.getElementById('registerForm');
+            
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Save form data to localStorage
+                    const formData = {
+                        fullname: document.getElementById('fullname').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        emergency_contact: document.getElementById('emergency_contact').value,
+                        gender: document.getElementById('gender').value,
+                        address: document.getElementById('address').value,
+                        car_status: document.getElementById('car_status').value,
+                        plate_number: document.getElementById('plate_number').value || 'N/A',
+                        avatar: document.querySelector('.avatar').src
+                    };
+                    
+                    localStorage.setItem('userProfile', JSON.stringify(formData));
+                    
+                    // Update profile page with the new data
+                    updateProfilePage();
+                    
+                    // Switch to profile tab
+                    switchTab('profile');
+                    
+                    alert('Registration successful! Your information has been saved.');
+                });
+            }
+            
+            // Profile form submission
+            const profileForm = document.getElementById('profileForm');
+            
+            if (profileForm) {
+                profileForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const oldPassword = document.getElementById('old_password').value;
+                    const newPassword = document.getElementById('new_password').value;
+                    const confirmPassword = document.getElementById('confirm_password').value;
+                    
+                    if (newPassword !== confirmPassword) {
+                        alert('New password and confirmation do not match!');
+                        return;
+                    }
+                    
+                    // In a real application, you would verify the old password and update it
+                    alert('Password changed successfully!');
+                    
+                    // Clear the form
+                    profileForm.reset();
+                });
+            }
+            
+            // Complaint form submission
+            const complaintForm = document.getElementById('complaintForm');
+            
+            if (complaintForm) {
+                complaintForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const subject = document.getElementById('subject').value;
+                    const category = document.getElementById('category').value;
+                    const complaint = document.getElementById('complaint').value;
+                    
+                    // Simple validation
+                    if (!subject || !category || !complaint) {
+                        alert('Please fill in all fields');
+                        return;
+                    }
+                    
+                    // In a real application, you would send this data to a server
+                    console.log('Complaint submitted:', { subject, category, complaint });
+                    
+                    // Show success message
+                    alert('Complaint submitted successfully! Our team will review it shortly.');
+                    
+                    // Reset form
+                    complaintForm.reset();
+                });
+            }
+            
+            // Scan buttons functionality
+            const scanButtons = document.querySelectorAll('.scan-button');
+            scanButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('QR Code scanning functionality would open here');
+                });
+            });
+            
+            // Mark notifications as read when clicked
+            const notificationItems = document.querySelectorAll('.notification-item');
+            notificationItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.remove('unread');
+                });
+            });
+            
+            // Search functionality
+            const searchButton = document.querySelector('.search-container button');
+            const searchInput = document.querySelector('.search-container input');
+            
+            if (searchButton && searchInput) {
+                searchButton.addEventListener('click', function() {
+                    if (searchInput.value.trim() !== '') {
+                        alert('Searching for: ' + searchInput.value);
+                        searchInput.value = '';
+                    } else {
+                        alert('Please enter something to search');
+                    }
+                });
+                
+                // Allow pressing Enter to search
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchButton.click();
+                    }
+                });
+            }
+            
+            // Function to update profile page with saved data
+            function updateProfilePage() {
+                const savedData = JSON.parse(localStorage.getItem('userProfile'));
+                
+                if (savedData) {
+                    document.getElementById('profile_fullname').textContent = savedData.fullname;
+                    document.getElementById('profile_phone').textContent = savedData.phone;
+                    document.getElementById('profile_email').textContent = savedData.email;
+                    document.getElementById('profile_gender').textContent = savedData.gender;
+                    document.getElementById('profile_car_status').textContent = savedData.car_status;
+                    document.getElementById('profile_plate').textContent = savedData.plate_number;
+                    
+                    if (savedData.avatar) {
+                        document.getElementById('profile_avatar').src = savedData.avatar;
+                    }
+                }
+            }
+            
+            // Load saved data on page load
+            updateProfilePage();
+        });
+    </script>
+</body>
+</html>
